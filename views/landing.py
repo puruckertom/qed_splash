@@ -16,7 +16,7 @@ def qed_landing_page(request):
     #else:
     #    html = render_to_string('00landing_page_qed_slides.html', {'title': 'Ubertool'})
 
-    html = render_to_string('00landing_page_qed_slides.html', {'title': 'qed'})
+    html = render_to_string('00landing_page_qed_slides_public.html', {'title': 'qed'})
 
     response = HttpResponse()
     response.write(html)
