@@ -21,25 +21,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
 print(PROJECT_ROOT)
-print(os.path.join(PROJECT_ROOT, 'templates').replace('\\','/'))
+print(os.path.join(PROJECT_ROOT, 'templates_qed').replace('\\','/'))
 # Define ENVIRONMENTAL VARIABLES for project (replaces the app.yaml)
 os.environ.update({
-    'UBERTOOL_BATCH_SERVER': 'http://uberrest-topknotmeadows.rhcloud.com/',
-    'UBERTOOL_MONGO_SERVER': 'http://uberrest-topknotmeadows.rhcloud.com',
-    'UBERTOOL_SECURE_SERVER': 'http://uberrest-topknotmeadows.rhcloud.com',
-    'REST_SERVER_8': 'http://134.67.114.8',  # 'http://localhost:64399'
     'PROJECT_PATH': PROJECT_ROOT,
     'SITE_SKIN': 'EPA',                          # Leave empty ('') for default skin, 'EPA' for EPA skin
     'CONTACT_URL': 'https://www.epa.gov/research/forms/contact-us-about-epa-research',
-    'CTS_EPI_SERVER': 'http://localhost:55342',
-    'CTS_EFS_SERVER': 'http://ca-test-1.cloudapp.net',
-    'CTS_JCHEM_SERVER': 'http://ca-test-1.cloudapp.net',
-    'CTS_SPARC_SERVER': 'http://204.46.160.69:8080',
-    'CTS_TEST_SERVER': ''
 })
-if not os.environ.get('UBERTOOL_REST_SERVER'):
-    os.environ.update({'UBERTOOL_REST_SERVER': 'http://localhost:7777'})  # Local REST server
-    print("REST backend = http://localhost:7777")
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -61,8 +50,6 @@ DEBUG = True
 TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = [
-    '.ubertool.org',
-    '.ubertool.org.',
     'localhost',
     '127.0.0.1'
 ]
@@ -76,7 +63,7 @@ APPEND_SLASH = True
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(PROJECT_ROOT, 'templates')],
+        'DIRS': [os.path.join(PROJECT_ROOT, 'templates_qed')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -101,20 +88,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     #'mod_wsgi.server',  # Only needed for mod_wsgi express (Python driver for Apache) e.g. on the production server
     # 'docs',
-    'api',
-    'models.boilerplate',
-    'models.terrplant',
-    'models.sip',
-    'models.stir',
-    'models.trex',
-    'models.therps',
-    'models.iec',
-    'models.earthworm',
-    'models.rice',
-    'models.kabam',
-    'models.ore',
-    'models.hwbi',
-    'cts_api'
     # 'rest_framework_swagger'
 )
 
@@ -181,7 +154,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
+    os.path.join(PROJECT_ROOT, 'static_qed'),
 )
 
 STATICFILES_FINDERS = (
@@ -190,7 +163,7 @@ STATICFILES_FINDERS = (
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static_qed/'
 
 # print 'BASE_DIR = %s' %BASE_DIR
 # print 'PROJECT_ROOT = %s' %PROJECT_ROOT
