@@ -1,16 +1,16 @@
 """
-Django settings for UberDjango project.
+Django settings for qed splash page.
 
 For more information on this file, see
-https://docs.djangoproject.com/en/1.6/topics/settings/
+https://docs.djangoproject.com/en/1.10/topics/settings/
 
 For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.6/ref/settings/
+https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 
-import os, sys
-
+import os
+import sys
 
 
 # Get machine IP address
