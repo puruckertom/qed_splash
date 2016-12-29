@@ -4,3 +4,6 @@
 [submodule "static_qed"]
 	path = static_qed
 	url = https://github.com/puruckertom/static_qed.git
+[submodule "splash_app"]
+	path = splash_app
+	url = https://github.com/puruckertom/splash_app.git
