@@ -1,0 +1,5 @@
+#clone
+git clone https://github.com/quanted/qed_splash.git
+
+#after cloning a project with submodules
+git submodule update --init --recursive #fetch data and checkout appropriate project
