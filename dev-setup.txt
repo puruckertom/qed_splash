@@ -3,3 +3,7 @@ git clone https://github.com/quanted/qed_splash.git
 
 #after cloning a project with submodules
 git submodule update --init --recursive #fetch data and checkout appropriate project
+
+#secret key
+# the file secret_key_django_dropbox.txt is shared on dropbox in directory ubertool_keys
+# needs to be placed the splash_app directory
