@@ -35,6 +35,7 @@ with open('secret_key_django_dropbox.txt') as f:
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+#DEBUG = False
 
 TEMPLATE_DEBUG = False
 
