@@ -19,10 +19,11 @@ MACHINE_ID = "developer"
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 #BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+TEMPLATE_ROOT = os.path.join(PROJECT_ROOT, 'templates_qed/')
+#STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static_qed')
+#os.path.join(PROJECT_ROOT, 'templates_qed')
 
-print(PROJECT_ROOT)
-print(os.path.join(PROJECT_ROOT, 'templates_qed').replace('\\','/'))
-# Define ENVIRONMENTAL VARIABLES for project (replaces the app.yaml)
+# Define ENVIRONMENTAL VARIABLES
 os.environ.update({
     'PROJECT_PATH': PROJECT_ROOT,
     'SITE_SKIN': 'EPA',                          # Leave empty ('') for default skin, 'EPA' for EPA skin
@@ -54,8 +55,8 @@ APPEND_SLASH = True
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(PROJECT_ROOT, 'templates_qed/splash'),
-                 os.path.join(PROJECT_ROOT, 'templates_qed/drupal_2017')],
+        'DIRS': [os.path.join(TEMPLATE_ROOT, 'splash'),
+                 os.path.join(TEMPLATE_ROOT, 'drupal_2017')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -70,7 +71,6 @@ TEMPLATES = [
 ]
 
 # Application definition
-
 INSTALLED_APPS = (
     'splash_app',
     # 'django.contrib.admin',
@@ -96,7 +96,6 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'urls'
 
 WSGI_APPLICATION = 'wsgi_local.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
@@ -160,12 +159,13 @@ STATIC_URL = '/static_qed/'
 
 #print('BASE_DIR = %s' %BASE_DIR)
 print('PROJECT_ROOT = %s' %PROJECT_ROOT)
+print('TEMPLATE_ROOT = %s' %TEMPLATE_ROOT)
+#print('STATIC_ROOT = %s' %STATIC_ROOT)
 
 # Path to Sphinx HTML Docs
 # http://django-docs.readthedocs.org/en/latest/
 
 DOCS_ROOT = os.path.join(PROJECT_ROOT, 'docs', '_build', 'html')
-
 DOCS_ACCESS = 'public'
 
 # Log to console in Debug mode
