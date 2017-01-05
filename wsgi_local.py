@@ -11,7 +11,7 @@ import os
 
 print('wsgi_local.py')
 # Settings.py declaration
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "splash_app.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
 
 # entry point
 app = django.core.handlers.wsgi.WSGIHandler()

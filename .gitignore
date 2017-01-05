@@ -1,7 +1,6 @@
 secret_key_django_dropbox.txt
 db.sqlite3
 .DS_Store
-secret.py
 .idea/
 
 # Byte-compiled / optimized / DLL files
