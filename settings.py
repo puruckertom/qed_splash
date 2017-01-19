@@ -40,6 +40,8 @@ DEBUG = True
 
 TEMPLATE_DEBUG = False
 
+IS_PUBLIC = True
+
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1'
